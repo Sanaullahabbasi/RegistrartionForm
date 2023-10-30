@@ -98,6 +98,27 @@ function redirect(){
   window.location.href = "./index.html"
 }
 function logout(){
- .com.com.com.com.com // localStorage.clear();
+  // localStorage.clear();
   setTimeout(redirect, 2000)
+}
+
+function login(){
+  event.preventDefault();
+  var email = document.getElementById("email");
+  var password = document.getElementById("password");
+  var loginData = JSON.parse(localStorage.getItem("userData"));
+  console.log(loginData)
+  if(email.value !== loginData.email){
+    emailError.innerHTML = `
+    <p class="err">*this email is not registered</p>`;
+  }
+  else if(password.value !== loginData.password){
+    passwordError.innerHTML = `
+    <p class="err">*password is wrong</p>`;
+  }
+  else{
+    setTimeout(() => {
+      window.location.href = "./dashboard.html";
+    }, 2000);
+  }
 }
