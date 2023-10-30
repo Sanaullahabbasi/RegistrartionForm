@@ -33,7 +33,7 @@ function formRegister() {
   } else if (password.value === "" && confirmPassword.value === "") {
     passwordError.innerHTML = `
   <p class="err">*password is required</p>`;
-  cPasswordError = `
+    cPasswordError = `
   <p class="err">*password is required</p>`;
   } else if (password.value !== confirmPassword.value) {
     cPasswordError.innerHTML = `
@@ -41,36 +41,63 @@ function formRegister() {
   } else {
     Swal.fire({
       icon: "success",
-      title: "registered sucessfully",
+      title: `registered sucessfully <br/> Thank You ${name.value.toUpperCase()}`,
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2000,
     });
+    var userData = {
+      name: name.value,
+      email: email.value,
+      phoneNumber: phoneNumber.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value,
+    };
+    localStorage.setItem("userData", JSON.stringify(userData));
+    var getUserData = JSON.parse(localStorage.getItem("userData"));
+    console.log(getUserData);
+  
+    setTimeout(() => {
+      window.location.href = "./dashboard.html";
+    }, 2000);
   }
 
-  var userData = {
-    name: name.value,
-    email: email.value,
-    phoneNumber: phoneNumber.value,
-    password: password.value,
-    confirmPassword: confirmPassword.value,
-  };
-  localStorage.setItem("userData", JSON.stringify(userData));
-  var getUserData = JSON.parse(localStorage.getItem("userData"));
-  console.log(getUserData);
+
 }
 
-
-function checkPassword(){
+function checkPassword() {
   var password = document.getElementById("password");
   var confirmPassword = document.getElementById("confirmPassword");
   var cPasswordError = document.getElementById("cPasswordError");
   if (password.value === confirmPassword.value) {
     cPasswordError.innerHTML = `
   <p class="succes">*password matched</p>`;
-  }
-  else {
+  } else {
     cPasswordError.innerHTML = `
   <p class="err">*password is not matched</p>`;
-    }
-    
+  }
+}
+
+function welcome() {
+  var welcome = document.getElementById("welcome");
+  var getUserData = JSON.parse(localStorage.getItem("userData"));
+  welcome.innerHTML = `
+  <h1>Welcome to SMIT</h1>
+  <h6>Hi ${getUserData.name} </h6>
+  <p>your provided information are as follows </p>
+  <ul>
+    <li>Name : ${getUserData.name} </li>
+    <li>Email : ${getUserData.email} </li>
+    <li>Phone : ${getUserData.phoneNumber} </li>
+  </ul>
+  `;
+}
+
+welcome();
+
+function redirect(){
+  window.location.href = "./index.html"
+}
+function logout(){
+ .com.com.com.com.com // localStorage.clear();
+  setTimeout(redirect, 2000)
 }

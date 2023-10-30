@@ -23,92 +23,95 @@
   </head>
   <body>
     <div class="main1 p-4">
-      <form onsubmit="formRegister()">
-        <div class="header row"><h2>Registration Form</h2></div>
-        <div class="row">
-          <div class="mb-3 col-md-6">
+      <div>
+        <form onsubmit="formRegister()">
+          <div class="header row"><h2>Registration Form</h2></div>
+          <div class="row">
+            <div class="mb-3 col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                aria-describedby="emailHelp"
+                placeholder="First Name"
+              />
+              <div id="firstNameError"></div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                aria-describedby="emailHelp"
+                placeholder="Last Name"
+              />
+              <div id="lastNameError"></div>
+            </div>
+          </div>
+          <div class="mb-3">
             <input
               type="text"
               class="form-control"
-              id="firstName"
+              id="name"
+              placeholder="User Name"
               aria-describedby="emailHelp"
-              placeholder="First Name"
             />
-            <div id="firstNameError"></div>
+            <i class="fa-solid fa-user place"></i>
+            <div id="userNameError"></div>
           </div>
-          <div class="mb-3 col-md-6">
+          <div class="mb-3">
             <input
-              type="text"
+              type="email"
               class="form-control"
-              id="lastName"
+              id="email"
               aria-describedby="emailHelp"
-              placeholder="Last Name"
+              placeholder="Email"
             />
-            <div id="lastNameError"></div>
-             </div>
-        </div>
-        <div class="mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="User Name"
-            aria-describedby="emailHelp"
-          />
-          <i class="fa-solid fa-user place"></i>
-          <div id="userNameError"></div>
-        </div>
-        <div class="mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-            placeholder="Email"
-          />
-          <i class="fa-solid fa-envelope place"></i>
-          <div id="emailError"></div>
-        </div>
-        <div class="mb-3">
-          <input
-            type="number"
-            class="form-control"
-            id="number"
-            aria-describedby="emailHelp"
-            placeholder="Phone Number"
-          />
-          <i class="fa-solid fa-phone place"></i>
-          <div id="phoneError"></div>
-        </div>
-        <div class="row">
-          <div class="mb-3 col-md-6">
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              aria-describedby="emailHelp"
-              placeholder="Password"
-            />
-            <i class="fa-solid fa-lock place1"></i>
-            <div id="passwordError"></div>
-         </div>
-          <div class="mb-3 col-md-6">
-            <input
-              type="password"
-              class="form-control"
-              id="confirmPassword"
-              aria-describedby="emailHelp"
-              placeholder="Confirm Password" onkeyup="checkPassword()"
-            />
-            <i class="fa-solid fa-lock place1"></i>
-            <div id="cPasswordError"></div>
+            <i class="fa-solid fa-envelope place"></i>
+            <div id="emailError"></div>
           </div>
-        </div>
-        <div class="btn-cen">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          Already have an account?
-        </div>
-      </form>
+          <div class="mb-3">
+            <input
+              type="number"
+              class="form-control"
+              id="number"
+              aria-describedby="emailHelp"
+              placeholder="Phone Number"
+            />
+            <i class="fa-solid fa-phone place"></i>
+            <div id="phoneError"></div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-md-6">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                aria-describedby="emailHelp"
+                placeholder="Password"
+              />
+              <i class="fa-solid fa-lock place1"></i>
+              <div id="passwordError"></div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                aria-describedby="emailHelp"
+                placeholder="Confirm Password"
+                onkeyup="checkPassword()"
+              />
+              <i class="fa-solid fa-lock place1"></i>
+              <div id="cPasswordError"></div>
+            </div>
+          </div>
+          <div class="btn-cen">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            Already have an account?
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
